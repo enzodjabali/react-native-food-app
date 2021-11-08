@@ -4,9 +4,18 @@ import { ImageBackground, Image, Platform, StyleSheet, Text, TouchableOpacity, V
 import foodapp from './assets/foodapp.jpg';
 import * as ImagePicker from 'expo-image-picker';
 import * as Sharing from 'expo-sharing';
-// import uploadToAnonymousFilesAsync from 'anonymous-files'; 
 
-export default function App() {
+import { NativeRouter, Routes, Route } from 'react-router-native';
+
+import Home from './Home';
+import Products from "./Products";
+
+const App = () => {
+
+  // const goToAbout = () => {
+  //   Actions.about()
+  // }
+
   let pictureTxt = "No photo selected yet";
   let picture;
   let share;
@@ -75,11 +84,19 @@ export default function App() {
     }
 
   return (
+     <NativeRouter>
     <View style={styles.container}>
 
       <ImageBackground source={foodapp} resizeMode="cover" style={styles.imageBackground}>
         <Text style={styles.textTitle}>Food app</Text>
       </ImageBackground>
+
+
+      <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='/products' element={<Products />} />
+      </Routes>
+           
 
       {/* <Text style={styles.textStyle}>This is the moon</Text>
       <Text style={styles.textStyle2}>{pictureTxt}</Text> */}
@@ -104,13 +121,15 @@ export default function App() {
       </TouchableOpacity> */}
 
       <TouchableOpacity
-        onPress={openImagePickerAsync}
+      //   onPress={goToAbout}
         style={{ backgroundColor: '#D0D26C', borderRadius: 15, width: 300, height: 55, position: 'absolute', top: '80%', alignSelf: 'center' }}>
         <Text style={{ fontSize: 20, color: '#fff', padding: 10, fontSize: 25, textAlign: 'center' }}>À Table !</Text>
       </TouchableOpacity>
 
       <StatusBar style="auto" />
+
     </View>
+    </NativeRouter>
 
   );
 }
@@ -163,3 +182,57 @@ const styles = StyleSheet.create({
     resizeMode: "contain"
   }
 });
+
+export default App;
+
+
+
+// import 'react-native-gesture-handler';
+
+// import React from 'react';
+// import { StyleSheet, Text, View, Button } from 'react-native';
+
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createStackNavigator } from '@react-navigation/stack';
+// import HomeScreen from './HomeScreen';
+// import FriendsScreen from './FriendsScreen';
+
+// const Stack = createStackNavigator();
+
+// class App extends React.Component {
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//          <NavigationContainer>
+//             <Stack.Navigator>
+//                <Stack.Screen
+//                   name="Home"
+//                   component={HomeScreen}
+//                />
+//                <Stack.Screen
+//                   name="Friends"
+//                   component={FriendsScreen}
+//                />
+//             </Stack.Navigator>
+//          </NavigationContainer>
+//         <Text>Welcome to MySocialNetwork!</Text>
+
+//         <Button
+//           title="Add some friends"
+//           onPress={ navigate('Friends') }
+//         />
+//       </View>
+//     );
+//   }
+// }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });
+
+// export default App;
