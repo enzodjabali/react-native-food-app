@@ -1,2 +1,5 @@
-install : npm i
-start : npm start or expo start
+install : ```npm i```
+start :
+```npm start```
+or
+```expo start```
