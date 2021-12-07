@@ -1,4 +1,4 @@
-# React Native Food App V1.0
+# React Native Food App v1.0
 
 Simple food app front end application developed with React Native.
 
