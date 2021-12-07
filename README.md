@@ -40,5 +40,5 @@ Then install the dependencies needed via npm:
 ```bash
 npm install
 ```
-# Preview onto an iPhone 8 running IOS 14.4
+## Preview onto an iPhone 8 running IOS 14.4
 ![](https://cdn.discordapp.com/attachments/774340712585625603/913376882857238538/food-app-thumbnail.png)
