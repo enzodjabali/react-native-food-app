@@ -26,6 +26,11 @@ Onto an IOS simulator:
 expo start --ios
 ```
 
+Onto an Android simulator:
+```bash
+expo start --android
+```
+
 In your web browser:
 ```bash
 expo start --web
