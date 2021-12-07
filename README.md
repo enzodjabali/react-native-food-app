@@ -1,6 +1,5 @@
 # React Native Food App V1.0
 
-# Infrastructure Status Simple Web Interface
 Simple food app front end application developed with React Native.
 
 ## Installation
